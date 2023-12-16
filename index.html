@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    
+
+    <div id="panel">
+        <button id="black" class="button" onclick="colourChange('black');changeMode(0)">B</button>
+        <button id="red" class="button" onclick="colourChange('red');changeMode(0)">R</button>
+        <button id="orange" class="button" onclick="colourChange('orange');changeMode(0)">O</button>
+        <button id="yellow" class="button" onclick="colourChange('yellow');changeMode(0)">Y</button>
+        <button id="green" class="button" onclick="colourChange('green');changeMode(0)">G</button>
+        <button id="blue" class="button" onclick="colourChange('blue');changeMode(0)">Bl</button>
+        <button id="purple" class="button" onclick="colourChange('purple');changeMode(0)">P</button>
+
+        <button id="custom" class="button" onclick="openpick(); updhue();changeMode(0)">C</button>
+
+
+        <div id="pick" style="margin: 15px; display: none;">
+            <canvas id="pickcanvas"></canvas>
+            <br>
+            <input type="range" min="0" max="360" value="0" id="hue" oninput="updhue()">
+            <br>
+            <input type="range" min="0" max="100" value="100" id="alpha" oninput="updhue()">
+            <button onclick="changeMode(3)"><img src="images/eyedropper.png" width="25px"></button>
+        </div>
+        <div>
+            <!-- Color Picker Section -->
+            <section class="container mt-5" id="color-picker" onclick="newcc()">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <input class="form-control" id="colorInput" type="color" />
+                        <div class="mt-3" id="colorPreview">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Bootstrap & jQuery JS -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+            </script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js">
+            </script>
+            <!-- Custom JS -->
+        </div>
+
+        <button id="eraser" class="button" onclick="changeMode(5)">Eraser</button>
+
+        <button id="clear" class="button">Clear</button>
+        <button id="fill" class="button" onclick="changeMode(4)">fill</button>
+        <button class="button" onclick="changeMode(0)">Draw</button>
+        <button class="button" onclick="changeMode(1)">line</button>
+        <button class="button" onclick="changeMode(2)">Rect</button>
+        <button onclick="download()">download</button>
+
+        <input type="range" min="1" max="500" value="10" class="slider" id="myRange">
+
+    </div>
+    <div style="border: 5px solid black;">
+        <canvas id="canvas"></canvas>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
